@@ -30,14 +30,22 @@ public class Main {
         System.out.println("Świetnie! Podaj imię swojej postaci: ");
         String heroName = sc.nextLine();
 
-        System.out.println("Podaj klasę swojej postaci - Janusz Biznesu, Kapitan Biegunka czy Człowiek Materac?: ");
+        System.out.println("Wybierz klasę swojej postaci - Janusz Biznesu, Kapitan Biegunka czy Człowiek Materac?: ");
         String heroRole = sc.nextLine();
 
         System.out.println("Podaj wartość punktów siły swojej postaci - tylko wartości całkowite w zakresie 1-20: ");
         int heroStrength = sc.nextInt();
+        if (heroStrength < 1 || heroStrength > 20) {
+            System.out.println("Podałeś złą wartość! Wypad! ");
+            System.exit(0);
+        }
 
         System.out.println("Podaj wartość punktów many postaci - tylko wartości całkowite w zakresie 1-100: ");
         int heroMana = sc.nextInt();
+        if (heroMana < 1 || heroMana > 100) {
+            System.out.println("Podałeś złą wartość! Wypad! ");
+            System.exit(0);
+        }
 
         Hero hero1 = new Hero(heroName, heroRole, heroStrength, heroMana, heroIsNew);
         double silaCiosu = hero1.power(heroStrength, heroMana);
