@@ -41,8 +41,9 @@ public class Main {
 
         Hero hero1 = new Hero(heroName, heroRole, heroStrength, heroMana, heroIsNew);
         double silaCiosu = hero1.power(heroStrength, heroMana);
-        System.out.println("Gratulacje! Stworzyłeś swojego pierwszeo bohatera o imieniu " + heroName + ", klasy " +
-                heroRole + ", o sile " + heroStrength + " oraz z " + heroMana + " punktami many. " +
+
+        System.out.println("Gratulacje! Stworzyłeś swojego pierwszeo bohatera o imieniu " + hero1.showName() + ", klasy " +
+                hero1.showRole() + ", o sile " + hero1.showStrength() + " oraz z " + hero1.showManaPoints() + " punktami many. " +
                 "\nSiła ciosu Twojego bohatera wynosi " + silaCiosu + ". Miłej zabawy! ");
 
     }
