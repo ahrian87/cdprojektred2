@@ -23,7 +23,8 @@ public class Main {
             heroIsNew = true;
         }
         else {
-            System.out.println("Wczytywanie już utworzonych postaci będzie dostępne w naspnej wersji gry! Do widzenia!");
+            System.out.println("Wczytywanie już utworzonych postaci będzie dostępne w następnej wersji gry! " +
+                    "Do widzenia!");
             System.exit(0);
         }
 
