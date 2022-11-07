@@ -32,10 +32,10 @@ public class Main {
 
         do {
             System.out.println("Świetnie! Podaj imię swojej postaci: ");
-            String heroName = sc.nextLine();
+            String heroName = sc.next();
 
             System.out.println("Wybierz klasę swojej postaci - Janusz Biznesu, Kapitan Biegunka czy Człowiek Materac?: ");
-            String heroRole = sc.nextLine();
+            String heroRole = sc.next();
 
             System.out.println("Podaj wartość punktów siły swojej postaci - tylko wartości całkowite w zakresie 1-20: ");
             int heroStrength = sc.nextInt();
@@ -60,13 +60,12 @@ public class Main {
                     silaCiosu + ". Miłej zabawy! ");
 
             System.out.println("Czy chcesz stworzyć następną postać? Wpisz 'tak' lub 'nie': ");
-            String newHero = sc.nextLine();
-            if (Objects.equals(newHero, "tak")) {
-                i++;
+            String newHero = sc.next();
+            if (Objects.equals(newHero, "nie")) {
+                i = 0;
+                System.out.println("Baw się dobrze! ");
             }
-            else {
-                i--;
-            }
+
 
         } while (i > 0);
     }
