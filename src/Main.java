@@ -28,33 +28,46 @@ public class Main {
             System.exit(0);
         }
 
-        System.out.println("Świetnie! Podaj imię swojej postaci: ");
-        String heroName = sc.nextLine();
+        int i = 1;
 
-        System.out.println("Wybierz klasę swojej postaci - Janusz Biznesu, Kapitan Biegunka czy Człowiek Materac?: ");
-        String heroRole = sc.nextLine();
+        do {
+            System.out.println("Świetnie! Podaj imię swojej postaci: ");
+            String heroName = sc.nextLine();
 
-        System.out.println("Podaj wartość punktów siły swojej postaci - tylko wartości całkowite w zakresie 1-20: ");
-        int heroStrength = sc.nextInt();
-        if (heroStrength < 1 || heroStrength > 20) {
-            System.out.println("Podałeś złą wartość! Wypad! ");
-            System.exit(0);
-        }
+            System.out.println("Wybierz klasę swojej postaci - Janusz Biznesu, Kapitan Biegunka czy Człowiek Materac?: ");
+            String heroRole = sc.nextLine();
 
-        System.out.println("Podaj wartość punktów many postaci - tylko wartości całkowite w zakresie 1-100: ");
-        int heroMana = sc.nextInt();
-        if (heroMana < 1 || heroMana > 100) {
-            System.out.println("Podałeś złą wartość! Wypad! ");
-            System.exit(0);
-        }
+            System.out.println("Podaj wartość punktów siły swojej postaci - tylko wartości całkowite w zakresie 1-20: ");
+            int heroStrength = sc.nextInt();
+            if (heroStrength < 1 || heroStrength > 20) {
+                System.out.println("Podałeś złą wartość! Wypad! ");
+                System.exit(0);
+            }
 
-        Hero hero1 = new Hero(heroName, heroRole, heroStrength, heroMana, heroIsNew);
-        double silaCiosu = hero1.power(heroStrength, heroMana);
+            System.out.println("Podaj wartość punktów many postaci - tylko wartości całkowite w zakresie 1-100: ");
+            int heroMana = sc.nextInt();
+            if (heroMana < 1 || heroMana > 100) {
+                System.out.println("Podałeś złą wartość! Wypad! ");
+                System.exit(0);
+            }
 
-        System.out.println("Gratulacje! Stworzyłeś nowego bohatera o imieniu " + hero1.showName() +
-                ", klasy " + hero1.showRole() + ", o sile " + hero1.showStrength() + " oraz z " +
-                hero1.showManaPoints() + " punktem/punktami many. " + "\nSiła ciosu Twojego bohatera wynosi " +
-                silaCiosu + ". Miłej zabawy! ");
+            Hero hero1 =new Hero(heroName, heroRole, heroStrength, heroMana, heroIsNew);
+            double silaCiosu = hero1.power(heroStrength, heroMana);
 
+            System.out.println("Gratulacje! Stworzyłeś nowego bohatera o imieniu " + hero1.showName() +
+                    ", klasy " + hero1.showRole() + ", o sile " + hero1.showStrength() + " oraz z " +
+                    hero1.showManaPoints() + " punktem/punktami many. " + "\nSiła ciosu Twojego bohatera wynosi " +
+                    silaCiosu + ". Miłej zabawy! ");
+
+            System.out.println("Czy chcesz stworzyć następną postać? Wpisz 'tak' lub 'nie': ");
+            String newHero = sc.nextLine();
+            if (Objects.equals(newHero, "tak")) {
+                i++;
+            }
+            else {
+                i--;
+            }
+
+        } while (i > 0);
     }
 }
